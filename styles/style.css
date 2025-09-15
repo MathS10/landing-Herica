@@ -261,7 +261,7 @@ footer {
 
 
 /*mobile vertical*/
-@media  (max-width: 480px) {
+@media  (max-width: 768px) {
 
     .header {
         position: fixed;
@@ -302,6 +302,10 @@ footer {
 
     /* quando o menu está ativo, ele aparece */
     .nav.active .menu {
+        right: 0;
+    }
+
+    .nav.active{
         right: 0;
     }
     
