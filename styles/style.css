@@ -122,7 +122,7 @@ html {
     display: flex;
     position: relative;
     align-items: center;
-    justify-content: flex-start; /* desktop texto à direita */
+    justify-content: flex-end; /* desktop texto à direita */
     padding:0 8%;
     background: url("../fotos/Herica_4k.jpg")  right center /cover no-repeat;
 }
@@ -181,7 +181,7 @@ footer {
 }
 
 /*Mobile horizontal / tablets*/
-@media (min-width:481px) and (max-width: 768px) {
+@media (min-width:769px) and (max-width: 1024px) {
 
     .header {
         position: fixed;
@@ -227,8 +227,8 @@ footer {
     
     .hero {
         justify-content: flex-end; 
-        background-position:  60% center;
-        padding: 0 6%;
+        background-position:  50% center;
+        padding: 0 10%;
     }
 
     .hero::after {
@@ -240,6 +240,7 @@ footer {
 
     .hero-text {
         text-align: right;
+        max-width: 50%;
 
     }
 
