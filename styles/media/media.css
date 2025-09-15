@@ -1,0 +1,87 @@
+/*Mobile*/
+@media (max-width: 768px) {
+
+    .header {
+        position: fixed;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.095);
+        backdrop-filter: blur(2px);
+        width: 60%;
+        height: 100vh;
+        padding-top: 80px;
+        transition: right 0.4s ease-in-out;
+    }
+
+    
+
+    .menu li a {
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
+
+    /* sempre aparece no mobile */
+    .menu-toggle {
+        display: block;
+        z-index: 200; /* garante que fique acima do menu */
+        position: relative;
+    }
+
+    /* quando o menu está ativo, ele aparece */
+    .nav.active .menu {
+        right: 0;
+    }
+    
+    .hero {
+        background: url("../fotos/Herica_4k.jpg") center center / cover no-repeat;
+        height: 100vh;       /* ocupa toda a altura da tela */
+        width: 100%;
+        display: flex;
+        align-items: center; /* centraliza verticalmente os textos */
+        justify-content: flex-end; /* joga textos para a direita */
+        padding: 0 8%;       /* espaço lateral direito/esquerdo */
+        position: relative;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35); /* overlay para dar contraste */
+    }
+
+    .hero-text {
+        position: relative;  /* fica acima do overlay */
+        z-index: 1;
+        max-width: 90%;
+        color: #fff;
+        text-align: right;   /* texto alinhado à direita */
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    }

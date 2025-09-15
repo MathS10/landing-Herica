@@ -1,0 +1,339 @@
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis globais */
+:root {
+    --color-bg: #f5f6fa;
+    --color-primary: #0056d6;
+    --color-text: #fff;
+    --font-title: "Montserrat", sans-serif;
+    --font-body: "Poppins", sans-serif;
+}
+
+body {
+    font-family:var(--font-body);
+    background-color:rgba(39, 20, 182, 0.6);
+
+
+}
+
+/* Cabeçalho */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 15px;
+    z-index: 10;
+    background: transparent;
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4) ;
+    padding: 10px;
+}
+
+
+/* ===== Menu Desktop ===== */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    position: relative;
+    padding: 4px 4px;
+    transition: 0.2s ease-in-out;
+}
+
+.menu li a:hover{
+    color: var(--color-primary);
+    transition: 0.3s ease-in-out;
+    text-shadow: 0px 2px 2px rgba(255, 254, 254, 0.163);
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: width 0.3s ease-in-out;
+    
+}
+
+.menu li a:hover::after {
+    width: 100%;
+}
+
+.menu li a.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.menu li a.active::after {
+    width: 100%;
+    background-color: var(--color-primary);
+}
+
+
+/* ===== Botão Hamburguer ===== */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* só no mobile */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* Seção Hero */
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start; /* desktop texto à direita */
+    padding:0 8%;
+    background: url("../fotos/Herica_4k.jpg")  right center /cover no-repeat;
+}
+
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.366);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    color: #fff;
+    text-align: left;
+}
+
+
+
+.hero-text h1 {
+    font-size: clamp(2rem, 2vw, 1.3rem);
+    margin-bottom: 30px;
+}
+
+.hero-text p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin-bottom: 30px;
+}
+
+.btn {
+    background: #F2B441;
+    color: #3B2A1A;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #d99a2b;
+}
+
+
+
+/* Rodapé */
+footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/*Mobile horizontal / tablets*/
+@media (min-width:481px) and (max-width: 768px) {
+
+    .header {
+        position: fixed;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.095);
+        backdrop-filter: blur(2px);
+        width: 60%;
+        height: 100vh;
+        padding-top: 80px;
+        transition: right 0.4s ease-in-out;
+    }
+
+    
+
+    .menu li a {
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
+
+    /* sempre aparece no mobile */
+    .menu-toggle {
+        display: block;
+        z-index: 200; /* garante que fique acima do menu */
+        position: relative;
+    }
+
+    /* quando o menu está ativo, ele aparece */
+    .nav.active .menu {
+        right: 0;
+    }
+    
+    .hero {
+        justify-content: flex-end; 
+        background-position:  60% center;
+        padding: 0 6%;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35); /* overlay para dar contraste */
+    }
+
+    .hero-text {
+        text-align: right;
+
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    }
+
+
+/*mobile vertical*/
+@media  (max-width: 480px) {
+
+    .header {
+        position: fixed;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.095);
+        backdrop-filter: blur(2px);
+        width: 60%;
+        height: 100vh;
+        padding-top: 80px;
+        transition: right 0.4s ease-in-out;
+    }
+
+    
+
+    .menu li a {
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
+
+    /* sempre aparece no mobile */
+    .menu-toggle {
+        display: block;
+        z-index: 200; /* garante que fique acima do menu */
+        position: relative;
+    }
+
+    /* quando o menu está ativo, ele aparece */
+    .nav.active .menu {
+        right: 0;
+    }
+    
+    .hero {
+        justify-content: flex-end; 
+        background-position:  left center;
+        padding: 0 8%;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35); /* overlay para dar contraste */
+    }
+
+    .hero-text {
+        text-align: right;
+
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    }
+
