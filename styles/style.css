@@ -306,9 +306,8 @@ footer {
     }
     
     .hero {
-        justify-content: flex-end; 
-        background-position:  left center;
-        padding: 0 8%;
+
+        background-position: 34% center;
     }
 
     .hero::after {
@@ -319,7 +318,7 @@ footer {
     }
 
     .hero-text {
-        text-align: right;
+        text-align: left;
 
     }
 
