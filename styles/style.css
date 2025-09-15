@@ -310,7 +310,7 @@ footer {
     }
     
     .hero {
-        background: url(../fotos/herica.webp) center center/contain no-repeat;
+        background: url(../fotos/herica.webp) center center/ cover no-repeat;
 
         background-position: 34% center;
     }
